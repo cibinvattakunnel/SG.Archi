@@ -1,0 +1,5 @@
+
+*.exe
+*.dll
+CommonDataModel/Dictionary/SmartgroupDataModel/Bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll.refresh
+*.refresh

@@ -25,7 +25,7 @@
     <Option uri="http://sqldoc/project/name/" value="Smartgroup common data model" />
     <Option uri="http://sqldoc/project/cover/include/" value="True" />
     <Option uri="http://sqldoc/project/server_alias/" value="" />
-    <Option uri="http://sqldoc/project/outputpath/" value="C:\Users\Cibin.Vattakunnel\Documents\My Database Documentation" />
+    <Option uri="http://sqldoc/project/outputpath/" value="C:\Users\Cibin.Vattakunnel\source\SG.Archi\CommonDataModel\Dictionary" />
     <Option uri="http://sqldoc/project/outputname/addtimestamp/" value="False" />
     <Option uri="http://sqldoc/project/footer/date/format/" value="dddd, d MMMM yyyy h:mm:ss tt" />
     <Option uri="http://sqldoc/project/header/breadcrumbs/include/" value="True" />
