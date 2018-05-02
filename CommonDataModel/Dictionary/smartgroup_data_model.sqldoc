@@ -21,7 +21,7 @@
     <Option uri="http://sqldoc/project/selections/databases/user/[SgCommonDataFormat]/security/roles/include/" value="False" />
     <Option uri="http://sqldoc/project/description/" value="Generic model for data migration " />
     <Option uri="http://sqldoc/project/outputstyle/selected/" value="StandardHTML" />
-    <Option uri="http://sqldoc/project/outputname/" value="SmartgroupDataModel" />
+    <Option uri="http://sqldoc/project/outputname/" value="Dictionary" />
     <Option uri="http://sqldoc/project/name/" value="Smartgroup common data model" />
     <Option uri="http://sqldoc/project/cover/include/" value="True" />
     <Option uri="http://sqldoc/project/server_alias/" value="" />

@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Dictionary", "Dictionary\", "{C0E0C3F1-C795-4D08-B2B8-FFB3EE63302B}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51282"
+		Debug.AspNetCompiler.PhysicalPath = "Dictionary\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51282\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51282"
+		Release.AspNetCompiler.PhysicalPath = "Dictionary\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51282\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51282"
+		SlnRelativePath = "Dictionary\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0E0C3F1-C795-4D08-B2B8-FFB3EE63302B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0E0C3F1-C795-4D08-B2B8-FFB3EE63302B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9A2BC3F2-1BDD-4EC3-8DCF-BA170676B8D4}
+	EndGlobalSection
+EndGlobal
