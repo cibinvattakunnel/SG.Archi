@@ -5,9 +5,9 @@ CREATE TABLE [CommonFormat].[SalaryPackageBenefit]
 [BenefitType] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 [PaymentMethod] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 [CreditorId] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-[BankBSB] [varchar] (6) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
-[BankAccountNumber] [varchar] (9) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
-[BankAccountName] [varchar] (32) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[BankBSB] [nvarchar] (6) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[BankAccountNumber] [nvarchar] (9) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[BankAccountName] [nvarchar] (32) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [TaxType] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [CustomerReference] [varchar] (18) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [CurrentStartPayNumber] [int] NULL,
@@ -27,7 +27,6 @@ CREATE TABLE [CommonFormat].[SalaryPackageBenefit]
 [SubstantiationAmount] [decimal] (16, 2) NULL,
 [OutstandingAmount] [decimal] (16, 2) NULL,
 [NextNumberOfPaysOffset] [int] NULL,
-[BankAccountId] [int] NULL,
 [IsPaymentMethodId] [bit] NULL,
 [FBTTaxLiability] [bit] NULL,
 [IsRecurringSubs] [bit] NULL,
@@ -56,11 +55,11 @@ GO
 EXEC sp_addextendedproperty N'MS_Description', N'Benefits provided by employers include: fringe benefits, exempt benefits, and super.
 Data rows to include:Benefit which have been active in the past 7yrs', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', NULL, NULL
 GO
-EXEC sp_addextendedproperty N'MS_Description', N'Bank Account name which the system can credit funds to ', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'BankAccountName'
+EXEC sp_addextendedproperty N'MS_Description', N'Bank Account name which the system can credit funds to  (Leave this null when payment method is BPAY)', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'BankAccountName'
 GO
-EXEC sp_addextendedproperty N'MS_Description', N'Bank Account number which the system can credit funds to', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'BankAccountNumber'
+EXEC sp_addextendedproperty N'MS_Description', N'Bank Account number which the system can credit funds to  (Leave this null when payment method is BPAY)', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'BankAccountNumber'
 GO
-EXEC sp_addextendedproperty N'MS_Description', N'Bank BSB which the system can credit funds to /Sample Data :025-658', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'BankBSB'
+EXEC sp_addextendedproperty N'MS_Description', N'Bank BSB which the system can credit funds to  (Leave this null when payment method is BPAY) /Sample Data :025-658', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'BankBSB'
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Packaging benefits  Sample Data :fringe benefits, exempt benefits, and super. ', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'BenefitType'
 GO

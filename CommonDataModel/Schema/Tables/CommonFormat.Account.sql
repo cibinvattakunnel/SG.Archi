@@ -79,7 +79,10 @@ CREATE TABLE [CommonFormat].[Account]
 [OperatingCostMethodPercentage] [varchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [CollectContributionGst] [bit] NULL,
 [AllowCasualEmployee] [bit] NULL,
-[JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+[JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[FBTTreatment] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[FBTRemittanceFreq] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[isBPayAllowed] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 ALTER TABLE [CommonFormat].[Account] ADD CONSTRAINT [PK_Account] PRIMARY KEY CLUSTERED  ([AccountId]) ON [PRIMARY]
@@ -187,6 +190,10 @@ EXEC sp_addextendedproperty N'MS_Description', N'Default payroll frequency for e
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Superannuation calculation used when salary is reduced /Sample Data : Fixed, Reducible', 'SCHEMA', N'CommonFormat', 'TABLE', N'Account', 'COLUMN', N'DefaultSuperannuation'
 GO
+EXEC sp_addextendedproperty N'MS_Description', N'If the FBT Treatment = ''Sal Pack Held'' then must choose one of the 3 values. /Sample data :Quarterly, Half Yearly, Annually', 'SCHEMA', N'CommonFormat', 'TABLE', N'Account', 'COLUMN', N'FBTRemittanceFreq'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Default treatment for the employer, however each package can override this treatment. /Sample data :No FBT,Employer Held,Sal Pack Held', 'SCHEMA', N'CommonFormat', 'TABLE', N'Account', 'COLUMN', N'FBTTreatment'
+GO
 EXEC sp_addextendedproperty N'MS_Description', N'GST processing method. when on Net employer pays GST when Gross employee pays gst {options Net/Gross}', 'SCHEMA', N'CommonFormat', 'TABLE', N'Account', 'COLUMN', N'GstProcessingMethod'
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'How much of the GST rebate is passed onto the employee /Sample Data : ', 'SCHEMA', N'CommonFormat', 'TABLE', N'Account', 'COLUMN', N'GSTRebate'
@@ -196,6 +203,8 @@ GO
 EXEC sp_addextendedproperty N'MS_Description', N'Invoice Luxury Disposal Separately', 'SCHEMA', N'CommonFormat', 'TABLE', N'Account', 'COLUMN', N'InvoiceLuxuryDisposalSeparately'
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Invoice Luxury Non Deductible Separately', 'SCHEMA', N'CommonFormat', 'TABLE', N'Account', 'COLUMN', N'InvoiceLuxuryNonDeductibleSeparately'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Allow BPay payments ', 'SCHEMA', N'CommonFormat', 'TABLE', N'Account', 'COLUMN', N'isBPayAllowed'
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Any additional values to populate /Sample data :{"name":"value"}', 'SCHEMA', N'CommonFormat', 'TABLE', N'Account', 'COLUMN', N'JSON'
 GO
