@@ -15,6 +15,8 @@ EXEC sp_addextendedproperty N'MS_Description', N'Source system ID for employer g
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Source system ID for contact/driver ', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountGroup', 'COLUMN', N'InternalContactId'
 GO
+EXEC sp_addextendedproperty N'MS_Description', N'Any additional values to populate /Sample data :{"name":"value"}', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountGroup', 'COLUMN', N'JSON'
+GO
 EXEC sp_addextendedproperty N'MS_Description', N'Group name ', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountGroup', 'COLUMN', N'Name'
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'leave this blank ', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountGroup', 'COLUMN', N'PayfileUploadPassword'

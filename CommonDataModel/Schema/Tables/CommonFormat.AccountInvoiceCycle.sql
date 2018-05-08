@@ -32,14 +32,14 @@ CREATE TABLE [CommonFormat].[AccountInvoiceCycle]
 [AllowAutoMaximiseFee] [bit] NULL,
 [AllowAllowOverThreshold] [bit] NULL,
 [MaxPackagePercentage] [int] NULL,
-[MaxPackagePercentageCalculationType] [int] NULL,
-[InputTaxCreditCollectionType] [int] NULL,
+[MaxPackagePercentageCalculationType] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[InputTaxCreditCollectionType] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [AllowEmployerShare] [bit] NULL,
-[EmployerSharePercentage] [int] NULL,
+[EmployerSharePercentage] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [IsEmployerShareDoubleFee] [bit] NULL,
 [AllowPermitDripFeed] [bit] NULL,
 [DripFeedBufferAmount] [decimal] (16, 2) NULL,
-[NovatedLeaseRestriction] [int] NULL,
+[NovatedLeaseRestriction] [nvarchar] (256) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [SmartLeasingCode] [varchar] (12) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [VehicleNote] [varchar] (250) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [IsPostTaxDeductionsAllowed] [bit] NULL,
@@ -109,7 +109,7 @@ EXEC sp_addextendedproperty N'MS_Description', N'Nominates the % of the Employer
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Paygroup''s first payment date.', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'FirstPaymentDate'
 GO
-EXEC sp_addextendedproperty N'MS_Description', N'current fleet provider', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'FleetCurrentProvider'
+EXEC sp_addextendedproperty N'MS_Description', N'Current fleet provider', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'FleetCurrentProvider'
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Note regarding fleet', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'FleetNote'
 GO
@@ -159,7 +159,7 @@ EXEC sp_addextendedproperty N'MS_Description', N'Paycycle description ', 'SCHEM
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Paygroup''s next payment date calculate on paycycle.', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'NextDeductionDate'
 GO
-EXEC sp_addextendedproperty N'MS_Description', N'Foreign key relationship to Novated Lease Restriction table', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'NovatedLeaseRestriction'
+EXEC sp_addextendedproperty N'MS_Description', N'Novated Lease Restriction table if any', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'NovatedLeaseRestriction'
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Once of offset for payment day. This take precidance over PermanatPaymentOffset', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'OnceOffPaymentOffset'
 GO
@@ -185,8 +185,7 @@ EXEC sp_addextendedproperty N'MS_Description', N'The field allows a user to reco
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Permanent offset for payment day', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'PermanentPaymentOffset'
 GO
-EXEC sp_addextendedproperty N'MS_Description', N'
-The Smart leasing code which identifies the employer in the SMART leasing system', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'SmartLeasingCode'
+EXEC sp_addextendedproperty N'MS_Description', N'The Smart leasing code which identifies the employer in the SMART leasing system', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'SmartLeasingCode'
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'The field allows a user leave a note about if an employee can use their leave entitlements for packaging benefit on Termination ; the field does not have an impact on any system function.', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'TerminationNote'
 GO

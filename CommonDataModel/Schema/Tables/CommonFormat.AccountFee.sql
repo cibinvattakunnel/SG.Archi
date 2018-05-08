@@ -26,7 +26,7 @@ EXEC sp_addextendedproperty N'MS_Description', N'Source system ID for employer/c
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Source system ID Account Invoice Cycle ID', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountFee', 'COLUMN', N'AccountInvoiceCycleId'
 GO
-EXEC sp_addextendedproperty N'MS_Description', N'Creditor used ', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountFee', 'COLUMN', N'CreditorId'
+EXEC sp_addextendedproperty N'MS_Description', N'creditors  that are linked to the Fee', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountFee', 'COLUMN', N'CreditorId'
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Fee amount per annum', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountFee', 'COLUMN', N'FeeAmountPerAnnum'
 GO
@@ -46,5 +46,26 @@ EXEC sp_addextendedproperty N'MS_Description', N'Any additional values to popula
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Last date time the contact record has been updated /Sample Data :', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountFee', 'COLUMN', N'LastUpdatedTimestamp'
 GO
-EXEC sp_addextendedproperty N'MS_Description', N'Payment method /Sample Data :Employer pays In GST ', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountFee', 'COLUMN', N'PaymentMethod'
+EXEC sp_addextendedproperty N'MS_Description', N'Payment method /Sample Data :- Employer pays inc GST (Invoiced)
+- Employer pays GST only (Invoiced)
+
+- Employer pays Inc GST (Batching)
+
+- Employer pays GST only (Batching)
+
+- Sharing of fee (Batching)
+
+- Sharing of fee (Withheld)
+
+- Employee pays inc GST (Invoiced)
+
+- Employee & Employer pays inc GST (Batching)
+
+- Employee Batching & Employer Invoicing
+
+- Invoice some employees
+
+- Sharing of fee (Batching) & inv some employees
+
+- Employer pays GST only (invoiced) & inv some employees', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountFee', 'COLUMN', N'PaymentMethod'
 GO

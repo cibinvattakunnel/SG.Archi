@@ -45,7 +45,8 @@ CREATE TABLE [CommonFormat].[SalaryPackageBenefit]
 [ThisFBTpa] [decimal] (16, 2) NULL,
 [NextFBTpa] [decimal] (16, 2) NULL,
 [ThisFBTpp] [decimal] (16, 2) NULL,
-[NextFBTpp] [decimal] (16, 2) NULL
+[NextFBTpp] [decimal] (16, 2) NULL,
+[NovatedVehicleId] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 ALTER TABLE [CommonFormat].[SalaryPackageBenefit] ADD CONSTRAINT [PK_Benefit] PRIMARY KEY CLUSTERED  ([SalaryPackageBenefitId]) ON [PRIMARY]
@@ -79,13 +80,18 @@ EXEC sp_addextendedproperty N'MS_Description', N'GrossUp rate used ', 'SCHEMA',
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Total GST for current Year', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'GstYear'
 GO
+EXEC sp_addextendedproperty N'MS_Description', N'This is an indicator derived through scheduled benefits that indicates that a sub form for Balances section will be available. ', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'IsBalance'
+GO
 EXEC sp_addextendedproperty N'MS_Description', N'Benefit current status indicator (active or in-active)', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'IsDeleted'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N' This is an indicator derived through scheduled benefits that indicates that a sub form for Proof Of Expense section will be available.', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'IsPOE'
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'FBTAnnualAmount for next fbt year', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'NextFBTAnnualAmount'
 GO
-EXEC sp_addextendedproperty N'MS_Description', N'Next FBT (per year) amount', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'NextFBTpa'
+EXEC sp_addextendedproperty N'MS_Description', N'Payment amount \ Taxable value this FBT period', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'NextFBTpa'
 GO
-EXEC sp_addextendedproperty N'MS_Description', N'Next FBT (per pay) amount', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'NextFBTpp'
+EXEC sp_addextendedproperty N'MS_Description', N'
+ Payment amount \ Taxable value next FBT period', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'NextFBTpp'
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Allows the user to decide when the first payments needs to start for this benefit (for next FBT year) (eg 24)', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'NextNumberOfPays'
 GO
@@ -103,7 +109,9 @@ EXEC sp_addextendedproperty N'MS_Description', N'P1/C Calculated field made of v
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'P1/CN Calculated field made of current start pay number + CurrentNumberOfPays', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'P1_CN'
 GO
-EXEC sp_addextendedproperty N'MS_Description', N'Payment method used eg {EFT,BPay} etc..', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'PaymentMethod'
+EXEC sp_addextendedproperty N'MS_Description', N'Payment method used /Sample Data : RE,Direct,Manual,Cheque,DF,Regular,Non Payment', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'PaymentMethod'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Proof Of Expense supporting document amount', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'POESupportingDocAmt'
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Policy Number', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'PolicyNumber'
 GO
@@ -119,7 +127,7 @@ EXEC sp_addextendedproperty N'MS_Description', N'Category of the Benefit /Sample
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'FBTAnnualAmount for next fbt year', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'ThisFBTAnnualAmount'
 GO
-EXEC sp_addextendedproperty N'MS_Description', N'This FBT (per year) amount', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'ThisFBTpa'
+EXEC sp_addextendedproperty N'MS_Description', N'Payment amount \ Taxable value this FBT year *', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'ThisFBTpa'
 GO
-EXEC sp_addextendedproperty N'MS_Description', N' This FBT (per pay) amount', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'ThisFBTpp'
+EXEC sp_addextendedproperty N'MS_Description', N'Payment amount \ Taxable value next FBT year *', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'ThisFBTpp'
 GO
