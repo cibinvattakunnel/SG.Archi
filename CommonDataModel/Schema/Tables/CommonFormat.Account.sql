@@ -79,10 +79,10 @@ CREATE TABLE [CommonFormat].[Account]
 [OperatingCostMethodPercentage] [varchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [CollectContributionGst] [bit] NULL,
 [AllowCasualEmployee] [bit] NULL,
-[JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [FBTTreatment] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [FBTRemittanceFreq] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-[isBPayAllowed] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+[isBPayAllowed] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 ALTER TABLE [CommonFormat].[Account] ADD CONSTRAINT [PK_Account] PRIMARY KEY CLUSTERED  ([AccountId]) ON [PRIMARY]

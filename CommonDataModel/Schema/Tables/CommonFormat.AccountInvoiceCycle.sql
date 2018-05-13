@@ -60,6 +60,12 @@ CREATE TABLE [CommonFormat].[AccountInvoiceCycle]
 [TerminationNote] [varchar] (200) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [PayrollNoFixedLength] [int] NULL,
 [PaygroupLoyaltyProgram] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[GstTreatmentBenefit] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[GstTreatmentFees] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[GstTreatmentNovatedLease] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[GstTreatmentNovatedLeasePostTax] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[GstTreatmentEffectiveStart] [date] NOT NULL,
+[GstTreatmentEffectiveEnd] [date] NULL,
 [JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
@@ -116,6 +122,18 @@ GO
 EXEC sp_addextendedproperty N'MS_Description', N'Fleet car numbers', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'FleetNumberOfCars'
 GO
 EXEC sp_addextendedproperty N'MS_Description', N' Payment Frequency', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'Frequency'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Account cycle gst treatment method for benefits /Sample data : {Gross,Net}', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'GstTreatmentBenefit'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Account cycle gst treatment method end date', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'GstTreatmentEffectiveEnd'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Account cycle gst treatment method start date', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'GstTreatmentEffectiveStart'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Account cycle gst treatment method for fees /Sample data : {Gross,Net}', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'GstTreatmentFees'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Account cycle gst treatment method for novated lease /Sample data : {Gross,Net}', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'GstTreatmentNovatedLease'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Account cycle gst treatment method for novated lease PTC /Sample data : {Gross,Net}', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'GstTreatmentNovatedLeasePostTax'
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Nominates for which benefits ITC is required to be collected', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'InputTaxCreditCollectionType'
 GO
