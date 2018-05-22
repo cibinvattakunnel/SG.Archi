@@ -90,8 +90,7 @@ EXEC sp_addextendedproperty N'MS_Description', N'FBTAnnualAmount for next fbt ye
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Payment amount \ Taxable value this FBT period', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'NextFBTpa'
 GO
-EXEC sp_addextendedproperty N'MS_Description', N'
- Payment amount \ Taxable value next FBT period', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'NextFBTpp'
+EXEC sp_addextendedproperty N'MS_Description', N'Payment amount \ Taxable value next FBT period', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'NextFBTpp'
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Allows the user to decide when the first payments needs to start for this benefit (for next FBT year) (eg 24)', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'NextNumberOfPays'
 GO
@@ -100,6 +99,8 @@ GO
 EXEC sp_addextendedproperty N'MS_Description', N'Next Pay amount to be paid for the schedule amount.', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'NextPayAmount'
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Next FBT Year Paycycle pay number (eg {Fortnightly:1- 26} )', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'NextStartPayNumber'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Source system ID for novated vehicle ', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'NovatedVehicleId'
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Organisation Share Percent(save share)', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefit', 'COLUMN', N'OrganisationSharePercent'
 GO

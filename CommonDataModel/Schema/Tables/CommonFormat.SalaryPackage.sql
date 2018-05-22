@@ -1,7 +1,7 @@
 CREATE TABLE [CommonFormat].[SalaryPackage]
 (
 [SalaryPackageId] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
-[AccountId] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[AccountId] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [ContactId] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 [EmployeeId] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [StartDate] [date] NULL,
