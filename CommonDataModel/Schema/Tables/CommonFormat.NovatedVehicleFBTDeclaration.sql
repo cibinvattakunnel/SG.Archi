@@ -17,8 +17,9 @@ CREATE TABLE [CommonFormat].[NovatedVehicleFBTDeclaration]
 [DeclarationCompletedbyDriver] [bit] NOT NULL,
 [DeclarationCompletedbyDriverDate] [date] NULL,
 [LastUpdatedTimestamp] [datetime] NULL,
-[FBVValue] [decimal] (18, 4) NOT NULL
-) ON [PRIMARY]
+[FBVValue] [decimal] (18, 4) NOT NULL,
+[JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 ALTER TABLE [CommonFormat].[NovatedVehicleFBTDeclaration] ADD CONSTRAINT [PK_NovatedVehicleFBTDeclaration] PRIMARY KEY CLUSTERED  ([NovatedVehicleFBTDeclarationId]) ON [PRIMARY]
 GO

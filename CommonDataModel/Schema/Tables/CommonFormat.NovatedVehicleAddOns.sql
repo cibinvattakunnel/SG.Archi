@@ -9,8 +9,9 @@ CREATE TABLE [CommonFormat].[NovatedVehicleAddOns]
 [BuyExGst] [decimal] (18, 4) NULL,
 [BuyGst] [decimal] (18, 4) NULL,
 [SellExGST] [decimal] (18, 4) NULL,
-[SellGst] [decimal] (18, 4) NULL
-) ON [PRIMARY]
+[SellGst] [decimal] (18, 4) NULL,
+[JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 ALTER TABLE [CommonFormat].[NovatedVehicleAddOns] ADD CONSTRAINT [PK_NovatedVehicleAddOns] PRIMARY KEY CLUSTERED  ([NovatedVehicleAddOnId]) ON [PRIMARY]
 GO

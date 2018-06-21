@@ -71,8 +71,11 @@ CREATE TABLE [CommonFormat].[NovatedVehicle]
 [EngineNumber] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [CurrentFinanceStartDate] [datetime] NULL,
 [RegoExpiryDate] [date] NULL,
-[FinancePaymentAmountIncGST] [decimal] (18, 4) NULL
-) ON [PRIMARY]
+[FinancePaymentAmountIncGST] [decimal] (18, 4) NULL,
+[Make] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Model] [nvarchar] (256) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 ALTER TABLE [CommonFormat].[NovatedVehicle] ADD CONSTRAINT [PK_NovatedVehicle] PRIMARY KEY CLUSTERED  ([NovatedVehicleId]) ON [PRIMARY]
 GO

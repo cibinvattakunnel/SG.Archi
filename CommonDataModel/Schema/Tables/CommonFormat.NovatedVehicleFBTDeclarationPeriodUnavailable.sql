@@ -7,8 +7,9 @@ CREATE TABLE [CommonFormat].[NovatedVehicleFBTDeclarationPeriodUnavailable]
 [FbtYear] [int] NOT NULL,
 [UnavailableReason] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 [TotalDaysUnavailable] [int] NOT NULL,
-[LastUpdatedTimestamp] [datetime] NULL
-) ON [PRIMARY]
+[LastUpdatedTimestamp] [datetime] NULL,
+[JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 ALTER TABLE [CommonFormat].[NovatedVehicleFBTDeclarationPeriodUnavailable] ADD CONSTRAINT [PK_NovatedVehicleFBTDeclarationPeriodUnavailable] PRIMARY KEY CLUSTERED  ([NovatedVehicleFBTDeclarationId]) ON [PRIMARY]
 GO

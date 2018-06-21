@@ -17,8 +17,9 @@ CREATE TABLE [CommonFormat].[SalaryPackageBenefitTransaction]
 [AmountExGst] [decimal] (18, 4) NOT NULL,
 [AmountGst] [decimal] (18, 4) NOT NULL,
 [SupplierId] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-[LastUpdatedTimestamp] [datetime] NULL
-) ON [PRIMARY]
+[LastUpdatedTimestamp] [datetime] NULL,
+[JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 ALTER TABLE [CommonFormat].[SalaryPackageBenefitTransaction] ADD CONSTRAINT [PK_BenefitTransaction] PRIMARY KEY CLUSTERED  ([SalaryPackageBenefitTransactionId]) ON [PRIMARY]
 GO

@@ -8,8 +8,9 @@ CREATE TABLE [CommonFormat].[AccountGroupWorkSite]
 [NumberOfFullTimeEmployees] [int] NULL,
 [NumberOfPartTimeEmployees] [int] NULL,
 [NumberOfCasualEmployees] [int] NULL,
-[LastUpdatedTimestamp] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
-) ON [PRIMARY]
+[LastUpdatedTimestamp] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 ALTER TABLE [CommonFormat].[AccountGroupWorkSite] ADD CONSTRAINT [PK_AccountGroupWorkSite] PRIMARY KEY CLUSTERED  ([AccountGroupWorkSiteId]) ON [PRIMARY]
 GO

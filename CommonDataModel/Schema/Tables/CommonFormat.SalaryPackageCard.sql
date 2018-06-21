@@ -42,8 +42,9 @@ CREATE TABLE [CommonFormat].[SalaryPackageCard]
 [CardSecondaryOpenConfirmed] [datetime] NULL,
 [CardSecondaryCloseInitiated] [datetime] NULL,
 [CardSecondaryCloseRequested] [datetime] NULL,
-[CardSecondaryCloseConfirmed] [datetime] NULL
-) ON [PRIMARY]
+[CardSecondaryCloseConfirmed] [datetime] NULL,
+[JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 ALTER TABLE [CommonFormat].[SalaryPackageCard] ADD CONSTRAINT [PK__SalaryPa__974425E645348530] PRIMARY KEY CLUSTERED  ([SalaryPackageCardId]) ON [PRIMARY]
 GO

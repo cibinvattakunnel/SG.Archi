@@ -20,8 +20,9 @@ CREATE TABLE [CommonFormat].[NovatedVehicleTransaction]
 [AmountGst] [decimal] (18, 4) NOT NULL,
 [SupplierId] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [SupplierAccountId] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-[LastUpdatedTimestamp] [datetime] NULL
-) ON [PRIMARY]
+[LastUpdatedTimestamp] [datetime] NULL,
+[JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 ALTER TABLE [CommonFormat].[NovatedVehicleTransaction] ADD CONSTRAINT [PK_NovatedVehicleTransaction] PRIMARY KEY CLUSTERED  ([NovatedVehicleTransactionId]) ON [PRIMARY]
 GO

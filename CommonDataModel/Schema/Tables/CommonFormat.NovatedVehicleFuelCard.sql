@@ -9,8 +9,9 @@ CREATE TABLE [CommonFormat].[NovatedVehicleFuelCard]
 [NewCardRequired] [bit] NULL,
 [CostCentre] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [CardNumber] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-[AccountNumber] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
-) ON [PRIMARY]
+[AccountNumber] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 ALTER TABLE [CommonFormat].[NovatedVehicleFuelCard] ADD CONSTRAINT [PK_NovatedVehicleFuelCard] PRIMARY KEY CLUSTERED  ([NovatedFuelCardId]) ON [PRIMARY]
 GO

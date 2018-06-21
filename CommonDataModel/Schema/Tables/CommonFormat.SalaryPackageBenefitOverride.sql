@@ -7,8 +7,9 @@ CREATE TABLE [CommonFormat].[SalaryPackageBenefitOverride]
 [NumberOfPays] [int] NOT NULL,
 [Amount] [decimal] (16, 2) NOT NULL,
 [Description] [varchar] (60) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
-[LastUpdatedTimestamp] [datetime] NULL
-) ON [PRIMARY]
+[LastUpdatedTimestamp] [datetime] NULL,
+[JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'List of benefit items where override required ', 'SCHEMA', N'CommonFormat', 'TABLE', N'SalaryPackageBenefitOverride', NULL, NULL
 GO

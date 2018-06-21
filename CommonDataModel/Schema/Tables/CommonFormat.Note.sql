@@ -8,8 +8,9 @@ CREATE TABLE [CommonFormat].[Note]
 [NoteType] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [Message] [nvarchar] (500) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 [NoteDate] [datetime] NULL,
-[Priority] [bit] NULL
-) ON [PRIMARY]
+[Priority] [bit] NULL,
+[JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 ALTER TABLE [CommonFormat].[Note] ADD CONSTRAINT [PK_Note] PRIMARY KEY CLUSTERED  ([NoteId]) ON [PRIMARY]
 GO

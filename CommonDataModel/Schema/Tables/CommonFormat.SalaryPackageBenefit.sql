@@ -46,7 +46,8 @@ CREATE TABLE [CommonFormat].[SalaryPackageBenefit]
 [NextFBTpa] [decimal] (16, 2) NULL,
 [ThisFBTpp] [decimal] (16, 2) NULL,
 [NextFBTpp] [decimal] (16, 2) NULL,
-[NovatedVehicleId] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+[NovatedVehicleId] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 ALTER TABLE [CommonFormat].[SalaryPackageBenefit] ADD CONSTRAINT [PK_Benefit] PRIMARY KEY CLUSTERED  ([SalaryPackageBenefitId]) ON [PRIMARY]
