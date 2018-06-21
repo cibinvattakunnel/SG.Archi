@@ -74,14 +74,21 @@ CREATE TABLE [CommonFormat].[NovatedVehicle]
 [FinancePaymentAmountIncGST] [decimal] (18, 4) NULL,
 [Make] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [Model] [nvarchar] (256) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-[JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+[JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[PaymentToSmartleasingExGST] [decimal] (16, 2) NULL,
+[PaymentToSmartleasingGST] [decimal] (16, 2) NULL,
+[ManagedLeasePostTaxAmount] [decimal] (16, 2) NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 ALTER TABLE [CommonFormat].[NovatedVehicle] ADD CONSTRAINT [PK_NovatedVehicle] PRIMARY KEY CLUSTERED  ([NovatedVehicleId]) ON [PRIMARY]
 GO
-ALTER TABLE [CommonFormat].[NovatedVehicle] ADD CONSTRAINT [FK__NovatedVe__Accou__48CFD27E] FOREIGN KEY ([AccountId]) REFERENCES [CommonFormat].[Account] ([AccountId])
+ALTER TABLE [CommonFormat].[NovatedVehicle] ADD CONSTRAINT [FK__NovatedVe__Accou__671F4F74] FOREIGN KEY ([AccountId]) REFERENCES [CommonFormat].[Account] ([AccountId])
 GO
-ALTER TABLE [CommonFormat].[NovatedVehicle] ADD CONSTRAINT [FK__NovatedVe__Conta__49C3F6B7] FOREIGN KEY ([ContactId]) REFERENCES [CommonFormat].[Contact] ([ContactId])
+ALTER TABLE [CommonFormat].[NovatedVehicle] ADD CONSTRAINT [FK__NovatedVe__Accou__681373AD] FOREIGN KEY ([AccountId]) REFERENCES [CommonFormat].[Account] ([AccountId])
+GO
+ALTER TABLE [CommonFormat].[NovatedVehicle] ADD CONSTRAINT [FK__NovatedVe__Conta__690797E6] FOREIGN KEY ([ContactId]) REFERENCES [CommonFormat].[Contact] ([ContactId])
+GO
+ALTER TABLE [CommonFormat].[NovatedVehicle] ADD CONSTRAINT [FK__NovatedVe__Conta__69FBBC1F] FOREIGN KEY ([ContactId]) REFERENCES [CommonFormat].[Contact] ([ContactId])
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Details of novated vehicles
 Data rows to include:Novated Vehicles which have been active in the past 7yrs', 'SCHEMA', N'CommonFormat', 'TABLE', N'NovatedVehicle', NULL, NULL

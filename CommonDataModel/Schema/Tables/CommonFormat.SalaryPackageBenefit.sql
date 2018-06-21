@@ -33,7 +33,7 @@ CREATE TABLE [CommonFormat].[SalaryPackageBenefit]
 [IsBalance] [bit] NULL,
 [FBTBalance] [bit] NULL,
 [IsPOE] [bit] NULL,
-[POESupportingDocAmt] [bit] NULL,
+[POESupportingDocAmt] [decimal] (16, 2) NULL,
 [POETaxInvoiceHeld] [bit] NULL,
 [IsVehicleManagement] [bit] NULL,
 [IsDeleted] [bit] NULL,
@@ -47,7 +47,8 @@ CREATE TABLE [CommonFormat].[SalaryPackageBenefit]
 [ThisFBTpp] [decimal] (16, 2) NULL,
 [NextFBTpp] [decimal] (16, 2) NULL,
 [NovatedVehicleId] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-[JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+[JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[SubstantiationExpiryDate] [date] NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 ALTER TABLE [CommonFormat].[SalaryPackageBenefit] ADD CONSTRAINT [PK_Benefit] PRIMARY KEY CLUSTERED  ([SalaryPackageBenefitId]) ON [PRIMARY]

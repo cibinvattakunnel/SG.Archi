@@ -43,10 +43,6 @@ CREATE TABLE [CommonFormat].[AccountInvoiceCycle]
 [SmartLeasingCode] [varchar] (12) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [VehicleNote] [varchar] (250) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [IsPostTaxDeductionsAllowed] [bit] NULL,
-[IsDefaultSetupEcm] [bit] NULL,
-[IsDefaultSetupWithThreshold] [bit] NULL,
-[IsPostTaxMethodFull] [bit] NULL,
-[IsPostTaxMethodPartial] [bit] NULL,
 [FleetCurrentProvider] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [FleetNumberOfCars] [int] NULL,
 [FleetNote] [varchar] (250) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
@@ -66,7 +62,9 @@ CREATE TABLE [CommonFormat].[AccountInvoiceCycle]
 [GstTreatmentNovatedLeasePostTax] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 [GstTreatmentEffectiveStart] [date] NOT NULL,
 [GstTreatmentEffectiveEnd] [date] NULL,
-[JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+[JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[PostTaxMethod] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[PaygroupDefaultSetup] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 ALTER TABLE [CommonFormat].[AccountInvoiceCycle] ADD CONSTRAINT [PK_AccountInvoiceCycle] PRIMARY KEY CLUSTERED  ([AccountInvoiceCycleId]) ON [PRIMARY]
@@ -139,10 +137,6 @@ EXEC sp_addextendedproperty N'MS_Description', N'Nominates for which benefits IT
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'The field records if an agreement  needs to be sent; the field does not have an impact on any system function sent to payroll. ', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'IsAgreementMustBeSent'
 GO
-EXEC sp_addextendedproperty N'MS_Description', N'Flag to nominate if default setup method', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'IsDefaultSetupEcm'
-GO
-EXEC sp_addextendedproperty N'MS_Description', N'Flag to nominate if default setup with Threshold', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'IsDefaultSetupWithThreshold'
-GO
 EXEC sp_addextendedproperty N'MS_Description', N'The field records if an employee need to sign off; the field does not have an impact on any system function sent to payroll. ', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'IsEmployeeSignOffRequired'
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'if ticked, the Employer is paying a portion of the employees admin fee via the Employer Share amount.', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'IsEmployerShareDoubleFee'
@@ -154,10 +148,6 @@ GO
 EXEC sp_addextendedproperty N'MS_Description', N'The field records if an employer upload their payrol files through portal ( eg. not through email.) the field does not have an impact on any system function', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'IsPayrollUploadFile'
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Checkbox  to nominate if employer allow post tax deductions for vehicles', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'IsPostTaxDeductionsAllowed'
-GO
-EXEC sp_addextendedproperty N'MS_Description', N'Flag to nominate default Vechicle post tax method Full', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'IsPostTaxMethodFull'
-GO
-EXEC sp_addextendedproperty N'MS_Description', N'Flag to nominate default Vechicle post tax method Partial', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'IsPostTaxMethodPartial'
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Any additional values to populate /Sample data :{"name":"value"}', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'JSON'
 GO
