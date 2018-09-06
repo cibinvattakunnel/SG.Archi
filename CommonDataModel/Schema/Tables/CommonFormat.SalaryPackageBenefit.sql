@@ -9,7 +9,7 @@ CREATE TABLE [CommonFormat].[SalaryPackageBenefit]
 [BankAccountNumber] [nvarchar] (9) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [BankAccountName] [nvarchar] (32) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [TaxType] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-[CustomerReference] [varchar] (18) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CustomerReference] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [CurrentStartPayNumber] [int] NULL,
 [CurrentNumberOfPays] [int] NULL,
 [NextStartPayNumber] [int] NULL,
@@ -48,8 +48,9 @@ CREATE TABLE [CommonFormat].[SalaryPackageBenefit]
 [NextFBTpp] [decimal] (16, 2) NULL,
 [NovatedVehicleId] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-[SubstantiationExpiryDate] [date] NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+[SubstantiationExpiryDate] [date] NULL,
+[ScheduleTypeId] [int] NULL
+) ON [PRIMARY]
 GO
 ALTER TABLE [CommonFormat].[SalaryPackageBenefit] ADD CONSTRAINT [PK_Benefit] PRIMARY KEY CLUSTERED  ([SalaryPackageBenefitId]) ON [PRIMARY]
 GO

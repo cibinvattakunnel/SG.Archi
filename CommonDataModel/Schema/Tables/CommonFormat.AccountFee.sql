@@ -13,8 +13,9 @@ CREATE TABLE [CommonFormat].[AccountFee]
 [CreditorId] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [InvoiceFormat] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [LastUpdatedTimestamp] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-[JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+[JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[ScheduleTypeId] [int] NULL
+) ON [PRIMARY]
 GO
 ALTER TABLE [CommonFormat].[AccountFee] ADD CONSTRAINT [PK_AccountFee] PRIMARY KEY CLUSTERED  ([AccountFeeId]) ON [PRIMARY]
 GO

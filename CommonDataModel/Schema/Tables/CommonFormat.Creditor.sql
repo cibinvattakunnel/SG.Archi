@@ -17,7 +17,9 @@ CREATE TABLE [CommonFormat].[Creditor]
 [BankAccountNumber] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [LinkedCreditorId] [varchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [CommonFormat].[Creditor] ADD CONSTRAINT [PK_CreditorID] PRIMARY KEY CLUSTERED  ([CreditorId]) ON [PRIMARY]
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'List of shared/global creditor ', 'SCHEMA', N'CommonFormat', 'TABLE', N'Creditor', NULL, NULL
 GO

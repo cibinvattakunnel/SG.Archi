@@ -28,8 +28,9 @@ CREATE TABLE [CommonFormat].[SalaryPackage]
 [CostCentre] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [hasNoFBTLimitOverride] [bit] NULL,
 [WorkSiteName] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-[JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+[JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[hasReachedThresholdLimit] [bit] NULL
+) ON [PRIMARY]
 GO
 ALTER TABLE [CommonFormat].[SalaryPackage] ADD CONSTRAINT [PK_Package] PRIMARY KEY CLUSTERED  ([SalaryPackageId]) ON [PRIMARY]
 GO

@@ -65,7 +65,7 @@ CREATE TABLE [CommonFormat].[AccountInvoiceCycle]
 [JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [PostTaxMethod] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [PaygroupDefaultSetup] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+) ON [PRIMARY]
 GO
 ALTER TABLE [CommonFormat].[AccountInvoiceCycle] ADD CONSTRAINT [PK_AccountInvoiceCycle] PRIMARY KEY CLUSTERED  ([AccountInvoiceCycleId]) ON [PRIMARY]
 GO
@@ -173,6 +173,10 @@ EXEC sp_addextendedproperty N'MS_Description', N'Once of offset for payment day.
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'The field allows a user if an employee can use their leave entitlements for packaging benefits on Termination ; the field does not have an impact on any system function. /Sample Data : No,Yes,Unsure', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'PackageLeaveEntitlementsOnTermination'
 GO
+EXEC sp_addextendedproperty N'MS_Description', N'1: ECM
+2: Within Threshold
+ ', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'PaygroupDefaultSetup'
+GO
 EXEC sp_addextendedproperty N'MS_Description', N'/Sample data : No,All Employees,Cardholder only,Card holder & Requested', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'PaygroupLoyaltyProgram'
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Allow payment delay offset', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'PaymentDelayOffset'
@@ -192,6 +196,11 @@ GO
 EXEC sp_addextendedproperty N'MS_Description', N'The field allows a user to record which payroll system an employer is using; the field does not have an impact on any system function.', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'PayrollSystemUsed'
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Permanent offset for payment day', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'PermanentPaymentOffset'
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'1:Full
+2:Partial
+3:No Post-tax
+ ', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'PostTaxMethod'
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'The Smart leasing code which identifies the employer in the SMART leasing system', 'SCHEMA', N'CommonFormat', 'TABLE', N'AccountInvoiceCycle', 'COLUMN', N'SmartLeasingCode'
 GO

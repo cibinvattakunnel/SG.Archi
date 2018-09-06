@@ -20,7 +20,7 @@ CREATE TABLE [CommonFormat].[Account]
 [MailingAddressPostCode] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [NumberOfEmployees] [int] NULL,
 [NumberOfEligibleEmployees] [int] NULL,
-[AgreementTerms] [nvarchar] (36) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[AgreementTerms] [varchar] (500) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [AgreementStart] [date] NULL,
 [AgreementEnd] [date] NULL,
 [BankAccountCreditName] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
@@ -83,7 +83,7 @@ CREATE TABLE [CommonFormat].[Account]
 [FBTRemittanceFreq] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [isBPayAllowed] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+) ON [PRIMARY]
 GO
 ALTER TABLE [CommonFormat].[Account] ADD CONSTRAINT [PK_Account] PRIMARY KEY CLUSTERED  ([AccountId]) ON [PRIMARY]
 GO
