@@ -1,0 +1,17 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE PROC [dbo].[uspScriptPrimaryKey] @schemaName [VARCHAR](50),@databaseName [VARCHAR](255)
+AS
+BEGIN
+	SELECT 
+	'ALTER TABLE ' +  TABLE_NAME,
+	'ADD PRIMARY KEY (' + COLUMN_NAME +');'
+	FROM dbo.SchemaColumn 
+	WHERE IS_PRIMARY_KEY = 1
+	AND TABLE_SCHEMA = @schemaName
+	AND TABLE_CATALOG = @databaseName
+END
+GO
