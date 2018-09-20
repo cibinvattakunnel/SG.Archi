@@ -64,7 +64,8 @@ CREATE TABLE [CommonFormat].[AccountInvoiceCycle]
 [GstTreatmentEffectiveEnd] [date] NULL,
 [JSON] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [PostTaxMethod] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-[PaygroupDefaultSetup] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+[PaygroupDefaultSetup] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[SmartGroupFinanceId] [varchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
 ) ON [PRIMARY]
 GO
 ALTER TABLE [CommonFormat].[AccountInvoiceCycle] ADD CONSTRAINT [PK_AccountInvoiceCycle] PRIMARY KEY CLUSTERED  ([AccountInvoiceCycleId]) ON [PRIMARY]
